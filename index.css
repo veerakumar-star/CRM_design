@@ -1,0 +1,484 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Exo 2, system-ui, Arial;
+}
+
+/* PAGE WIDTH FRAME (1440 design frame) Header*/
+.header {
+     width:100%;
+  background:#ffffff;
+  box-shadow:0 8px 24px rgba(149,157,165,0.10);
+}
+
+/* FIGMA FRAME IMPLEMENTATION
+   width:1359px
+   left:40px gutters
+   top:25px
+   height:hug(64px)
+*/
+.nav-frame {
+  width:100%;
+  padding:0 40px;        /* ← key change */
+  height:114px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* LEFT */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    /* hug height from figma */
+}
+
+/* Actual SVG size lock */
+.logo img {
+    width: 208.57px;
+    height: 64px;
+    display: block;
+    object-fit: contain;
+}
+
+/* CENTER MENU */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* NAV ITEM = TEXT + ICON GROUP */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* small space between text and arrow */
+    text-decoration: none;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #222222;
+}
+
+/* Arrow icon */
+.nav-item img {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+/* RIGHT ACTIONS */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* BUTTON SYSTEM */
+.btn-primary {
+    width: 215px;
+    height: 52px;
+    background: #2D96BC;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #ffffff;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+.btn-login {
+    width: 130px;
+    height: 52px;
+    background: #ffffff;
+    border: 1px solid #2D96BC;
+    border-radius: 10px;
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #2D96BC;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-login img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* 1St section */
+/* HERO SECTION FRAME (1920 × 676) */
+.hero {
+     width:100%;
+    
+    position:relative;
+    display:flex;
+    justify-content:center;
+
+    padding-top:59px;        /* ✔ correct figma behavior */
+    padding-bottom:120px;
+
+
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("assets/brick-bg.png") no-repeat center top;
+    background-size: 1442px 761px;
+    opacity:0.18; 
+    pointer-events: none;
+}
+
+/* INNER AUTO-LAYOUT COLUMN (centered) */
+
+.hero-frame{
+  position:relative;
+  z-index:1;
+
+  width:1206px;          /* exact heading frame width from figma */
+  margin:0 auto;         /* center the column */
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+
+/* hero batch, text and image */
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6.81px;
+  padding:8.51px 14px;
+  background:#ffffff;
+  border:0.85px solid #9ACCFF;
+  border-radius:20px;
+}
+
+.hero-badge span{
+  font-family:'Exo 2', sans-serif;
+  font-weight:400;
+  font-size:13.62px;
+  line-height:23.83px;
+  color:#63657E;
+  white-space:nowrap;
+}
+
+.hero-badge img{
+  width:18px;
+  height:18px;
+  object-fit:contain;
+}
+
+/* Hero title and dash line png both way color */
+
+.hero-title{
+  font-family:'Exo 2', sans-serif;
+  font-weight:600;
+  font-size:58px;
+  line-height:69px;
+  text-align:center;
+  color:#111111;
+}
+
+/* highlighted word */
+.hero-title .highlight{
+  color:#2D96BC;
+  position:relative;
+  display:inline-block;
+}
+
+.hero-title .highlight::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:100%;
+  height:14px;
+
+  background:url("assets/line.png") no-repeat center;
+  background-size:contain;
+  pointer-events:none;
+}
+
+/* hero description */
+
+.hero-desc{
+  width:862px;
+  margin-top:24px;
+
+  font-family:'Exo 2', sans-serif;
+  font-weight:600;
+  font-size:19px;
+  line-height:28px;
+  text-align:center;
+  color:#363636;
+}
+
+/* Integration capsules */
+
+.works{
+  margin-top:28px;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:19px 22px;
+  border-radius:20px;
+
+  background:linear-gradient(90deg,
+    #5ED3FF 0%,
+    #6EC6FE 35%,
+    #EB65F4 70%,
+    #FD58F2 100%
+  );
+}
+
+/* text */
+.works-text{
+  font-family:'Exo 2', sans-serif;
+  font-weight:600;
+  font-size:19px;
+  color:#1B2B38;
+}
+
+/* icons group */
+.works-icons{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* white circular icon chips */
+.circle{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+
+  background:#ffffff;
+  border:1px solid #E1E1E1;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.circle img{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+}
+
+.circle.hubspot{
+  background:#FF7A59;
+}
+
+.circle.pipedrive{
+  background:#21844A;
+}
+
+.circle.salesforce{
+  background:#ffffff;
+}
+
+/* ===== RATINGS WRAPPER ===== */
+.ratings{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:60px; /* figma gap */
+}
+
+/* ===== EACH RATING BLOCK ===== */
+.rating{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* ===== LOGO BOX (40x40 card) ===== */
+.rating-logo{
+  width:40px;
+  height:40px;
+  padding:5px;
+
+  background:#ffffff;
+  border-radius:6.67px;
+
+  box-shadow:0px 4px 34px rgba(173,173,173,0.10);
+  object-fit:contain;
+}
+
+/* ===== STARS GROUP ===== */
+.stars{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.stars img{
+  width:14px;
+  height:14px;
+  object-fit:contain;
+}
+
+/* ===== 5/5 TEXT ===== */
+.score{
+  font-family:'Exo 2', sans-serif;
+  font-weight:500;
+  font-size:14.31px;
+  line-height:100%;
+  color:#090F4E;
+}
+
+/* CTA ROW */
+
+.cta-row{
+  display:flex;
+  align-items:center;
+  gap:14px; /* Figma gap */
+  margin-top:24px;
+}
+
+.chrome-btn{
+  width:214px;
+  height:60px;
+  padding:0 13px;
+
+  background:#2F2F2F;
+  border-radius:13px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.chrome-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  line-height:1;
+}
+
+.chrome-text .small{
+  font-family:'Exo 2', sans-serif;
+  font-weight:400;
+  font-size:12px;
+  color:#E4E4E4;
+}
+
+.chrome-text .big{
+  font-family:'Exo 2', sans-serif;
+  font-weight:500;
+  font-size:16px;
+  color:#FFFFFF;
+}
+
+.chrome-icon{
+  width:20.4px;
+  height:20.4px;
+  object-fit:contain;
+}
+
+.trial-btn{
+  width:214px;
+  height:60px;
+
+  background:#B3FC6A;
+  border:none;
+  border-radius:13px;
+
+  font-family:'Exo 2', sans-serif;
+  font-weight:600;
+  font-size:18px;
+  color:#242424;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+}
+
+/* Feature Strip */
+
+.features-strip{
+    width:100%;
+    border-top:1px solid #E9EDF2;
+    padding:28px 0;
+    background:#ffffff;
+}
+
+.features-container{
+    width:1288px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+.feature{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.feature img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+}
+
+/* normal text */
+.feature span{
+    font-family:'Exo 2', sans-serif;
+    font-weight:400;
+    font-size:18px;
+    line-height:28px;
+    color:#5B6472;
+}
+
+/* highlighted words */
+.feature strong{
+    font-weight:600;
+    color:#0A1F44;
+}
+
