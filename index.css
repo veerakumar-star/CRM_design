@@ -497,7 +497,7 @@ html {
 
 .comparison {
   background: #F9FAFB;
- 
+
 }
 
 .comparison-container {
@@ -789,4 +789,152 @@ html {
   top: 74px;
   width: 100px;
   height: auto;
+}
+
+/* ================= HOW IT WORKS ================= */
+
+.how {
+  background: #EEF3F8;
+
+  background: #EEF3F8;
+  padding: 120px 0;
+
+
+}
+
+.how-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.how-head h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #090F4E;
+}
+
+.how-head p {
+  margin-top: 8px;
+  color: #6B7280;
+  font-size: 16px;
+}
+
+.steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 323px);
+  justify-content: center;
+  /* center whole row */
+  gap: 28px;
+}
+
+/* CURVED DASHED CONNECTOR */
+.steps-connector {
+  position: absolute;
+  top: 52px;
+  /* vertical alignment to numbers */
+  left: 18.9%;
+  transform: translateX(-50%);
+  width: 60.4%;
+  /* exact figma width ratio */
+  height: auto;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* CARD */
+.step {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 26px 22px;
+
+  width: 323px;
+  height: 449px;
+
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-number {
+  font-size: 52px;
+  font-weight: 700;
+  color: #2D96BC;
+  font-family: 'Caveat', cursive;
+  line-height: 1;
+}
+
+.step h3 {
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1F2937;
+}
+
+.step p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+.step img {
+  width: 100%;
+  height: 200px;
+  /* keeps layout stable */
+  object-fit: contain;
+  margin-top: 18px;
+}
+
+/* CTA */
+.how-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width:1100px) {
+
+  .steps {
+    grid-template-columns: repeat(2, 323px);
+  }
+
+  .step {
+    width: 323px;
+    height: auto;
+  }
+
+  .steps-connector {
+    display: none;
+  }
+}
+
+@media (max-width:700px) {
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1;
+  /* 100% */
+  letter-spacing: 0;
+  color: #090F4E;
+  margin: 0 auto;
 }
